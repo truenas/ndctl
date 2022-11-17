@@ -3,12 +3,12 @@ VERSION=74
 REVISION=2
 
 wget http://deb.debian.org/debian/pool/main/n/ndctl/ndctl_$VERSION-$REVISION.debian.tar.gz
-tar xf ndctl_$VERSION-$REVISION.debian.tar.xz
-rm ndctl_$VERSION-$REVISION.debian.tar.xz
+tar xf ndctl_$VERSION-$REVISION.debian.tar.gz
+rm ndctl_$VERSION-$REVISION.debian.tar.gz
 
-wget http://deb.debian.org/debian/pool/main/n/ndctl/ndctl_$VERSION.orig.tar.xz
-tar xf ndctl_$VERSION.orig.tar.xz --strip 1
-rm ndctl_$VERSION.orig.tar.xz
+wget http://deb.debian.org/debian/pool/main/n/ndctl/ndctl_$VERSION.orig.tar.gz
+tar xf ndctl_$VERSION.orig.tar.gz --strip 1
+rm ndctl_$VERSION.orig.tar.gz
 
 cp msft.patch debian/patches
 echo 'msft.patch' >> debian/patches/series
