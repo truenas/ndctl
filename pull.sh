@@ -2,7 +2,7 @@
 VERSION=74
 REVISION=2
 
-wget http://deb.debian.org/debian/pool/main/n/ndctl/ndctl_$VERSION-$REVISION.debian.tar.xz
+wget http://deb.debian.org/debian/pool/main/n/ndctl/ndctl_$VERSION-$REVISION.debian.tar.gz
 tar xf ndctl_$VERSION-$REVISION.debian.tar.xz
 rm ndctl_$VERSION-$REVISION.debian.tar.xz
 
