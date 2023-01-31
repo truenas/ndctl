@@ -1,14 +1,19 @@
 #!/bin/bash -ex
 VERSION=74
 REVISION=2
+BASEURL="https://launchpad.net/debian/+archive/primary/+sourcefiles/ndctl/$VERSION-$REVISION"
 
-wget http://deb.debian.org/debian/pool/main/n/ndctl/ndctl_$VERSION.orig.tar.gz
-tar xf ndctl_$VERSION.orig.tar.gz --strip 1
-rm ndctl_$VERSION.orig.tar.gz
+# download revision source
+REVISION_FILE="ndctl_$VERSION-$REVISION.debian.tar.xz"
+wget "$BASEURL/$REVISION_FILE"
+tar xf $REVISION_FILE
+rm $REVISION_FILE
 
-wget http://deb.debian.org/debian/pool/main/n/ndctl/ndctl_$VERSION-$REVISION.debian.tar.xz
-tar xf ndctl_$VERSION-$REVISION.debian.tar.xz
-rm ndctl_$VERSION-$REVISION.debian.tar.xz
+# download version source
+VERSION_FILE="ndctl_$VERSION.orig.tar.gz"
+wget "$BASEURL/$VERSION_FILE"
+tar xf $VERSION_FILE --strip 1
+rm $VERSION_FILE
 
 cp msft.patch debian/patches
 echo 'msft.patch' >> debian/patches/series
